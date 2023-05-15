@@ -21,6 +21,9 @@ steps:
 
 - task: CmdLine@2
   inputs:
+    script: 'cd AddGitHubActionFile.1.0.0'
+- task: CmdLine@2
+  inputs:
     script: 'dir'
 
 - task: CmdLine@2
