@@ -8,6 +8,9 @@ pool:
   vmImage: windows-latest
 
 steps:
+
+- checkout: none
+
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
