@@ -23,4 +23,4 @@ steps:
   displayName: 'Run Executable'
   inputs:
     script: 'dotnet AddGitHubAction.dll TestingGitVinoth vinothkumarGanesan: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'
-    workingDirectory: 'AddGitHubAction.1.0.0\lib\net6.0'
+    workingDirectory: '$(Build.SourcesDirectory)\AddGitHubAction.1.0.0\lib\net6.0'
