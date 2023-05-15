@@ -3,13 +3,23 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'Invoke-WebRequest https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -OutFile Nuget.exe'
+- task: CmdLine@2
+  inputs:
+    script: 'nuget install "AddGitHubActionFile" -source "https://nexus.syncfusion.com/repository/nuget-hosted/"'
+
+- task: CmdLine@2
+  inputs:
+    script: 'cd AddGitHubActionFile.1.0.0/lib/net6.0'
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
