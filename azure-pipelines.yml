@@ -21,13 +21,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'cd AddGitHubActionFile.1.0.0'
-- task: CmdLine@2
-  inputs:
-    script: 'dir'
+    script: |
+      cd AddGitHubAction.1.0.0\lib\net6.0
+      dotnet AddGitHubAction.dll 'TestingGitVinoth' 'vinothkumarGanesan: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'
 
-- task: CmdLine@2
-  displayName: 'Run Executable'
-  inputs:
-    script: 'dotnet AddGitHubAction.dll TestingGitVinoth vinothkumarGanesan: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'
-    workingDirectory: '$(Build.SourcesDirectory)\AddGitHubAction.1.0.0\lib\net6.0'
