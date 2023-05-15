@@ -22,7 +22,7 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      cd AddGitHubAction.1.0.0
+      cd AddGitHubAction.1.0.0\lib\net6.0
       dir
 - task: CmdLine@2
   inputs:
