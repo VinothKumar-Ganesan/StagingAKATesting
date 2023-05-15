@@ -18,12 +18,6 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'cd AddGitHubActionFile.1.0.0/lib/net6.0'
-
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    script: |
+      cd AddGitHubActionFile.1.0.0\lib\net6.0
+      dotnet AddGitHubAction.dll  TestingGitVinoth vinothkumarGanesan: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 
