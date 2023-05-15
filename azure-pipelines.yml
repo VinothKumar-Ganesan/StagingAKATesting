@@ -23,7 +23,11 @@ steps:
   inputs:
     script: |
       cd AddGitHubAction.1.0.0\lib\net6.0
-      dir
+
+
+- task: CmdLine@2
+  inputs:
+    script: dir
 - task: CmdLine@2
   displayName: 'Run Executable'
   inputs:
