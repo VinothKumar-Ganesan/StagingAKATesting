@@ -18,32 +18,9 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'nuget install "AddGitHubActionFile" -source "https://nexus.syncfusion.com/repository/nuget-hosted/"'
-- task: CmdLine@2
-  inputs:
-    script: 'dotnet AddGitHubAction.dll $(org) $(pat)'
-    workingDirectory: '$(System.DefaultWorkingDirectory)\AddGitHubAction.1.0.0\lib\net6.0'
+
 - task: CmdLine@2
   inputs:
     script: |
-      cd AddGitHubAction.1.0.0\lib\net6.0
-      dir
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'custom'
-    projects: 'AddGitHubAction.dll'
-    custom: 'dotnet'
-    arguments: '$(org) $(pat)'
-    workingDirectory: '$(System.DefaultWorkingDirectory)\AddGitHubAction.1.0.0\lib\net6.0'
-- task: BatchScript@1
-  inputs:
-    filename: 'dotnet AddGitHubAction.dll'
-    arguments: '$(org) $(pat)'
-    modifyEnvironment: false
-    workingFolder: 'AddGitHubAction.1.0.0\lib\net6.0'
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'run'
-    projects: 'AddGitHubAction.dll'
-    arguments: '$(org) $(pat)'
-    workingDirectory: 'AddGitHubAction.1.0.0\lib\net6.0\'
-
+     cd AddGitHubActionFile.1.0.0\lib\net6.0
+     dotnet AddGitHubAction.dll  TestingGitVinoth vinothkumarGanesan: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 
