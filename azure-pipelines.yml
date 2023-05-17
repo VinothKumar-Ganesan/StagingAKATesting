@@ -21,6 +21,5 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: |
-     cd AddGitHubActionFile.1.0.0\lib\net6.0
-     dotnet AddGitHubAction.dll  TestingGitVinoth vinothkumarGanesan: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 
+    script: 'dotnet AddGitHubAction.dll $(org) $(pat)'
+    workingDirectory: 'AddGitHubActionFile.1.0.0\lib\net6.0'
