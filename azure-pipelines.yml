@@ -18,7 +18,10 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'nuget install "AddGitHubActionFile" -source "https://nexus.syncfusion.com/repository/nuget-hosted/"'
-
+- task: CmdLine@2
+  inputs:
+    script: 'dotnet AddGitHubAction.dll $(org) $(pat)'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\AddGitHubAction.1.0.0\lib\net6.0'
 - task: CmdLine@2
   inputs:
     script: |
