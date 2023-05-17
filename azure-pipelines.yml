@@ -24,6 +24,12 @@ steps:
     script: |
       cd AddGitHubAction.1.0.0\lib\net6.0
       dir
+- task: BatchScript@1
+  inputs:
+    filename: 'dotnet AddGitHubAction.dll'
+    arguments: '$(org) $(pat)'
+    modifyEnvironment: false
+    workingFolder: 'AddGitHubAction.1.0.0\lib\net6.0'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'run'
